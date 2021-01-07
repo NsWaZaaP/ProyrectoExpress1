@@ -14,3 +14,8 @@ app.listen(3000,()=>{
 //? se utiliza para recibir la ruta de archivos publicos
 const publicPath = path.resolve(__dirname,'./public')
 app.use(express.static(publicPath))
+
+//? se llama el documento que quiere ser mostrado en el navegador
+app.get('/',(req, res)=>{
+    res.sendFile(path.resolve(__dirname,'./views/home.html'));
+})
