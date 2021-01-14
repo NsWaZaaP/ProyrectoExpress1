@@ -1,4 +1,5 @@
 const { publicDecrypt } = require('crypto');
+const { lookupService } = require('dns');
 const { static } = require('express');
 //? se requieren los frameworks y las funiciones necesarias desde node.js
 const express = require('express');
@@ -19,3 +20,5 @@ app.use(express.static(publicPath))
 app.get('/',(req, res)=>{
     res.sendFile(path.resolve(__dirname,'./views/home.html'));
 })
+
+
